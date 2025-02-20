@@ -74,21 +74,6 @@ The dataset used in this assignment is the **Heart Disease Dataset** from the UC
 - Visualizations:
   - **AUROC and AUPRC curves** for best models.
 
-## Deliverables
-1. **GitHub Repository Submission**:
-   - `main.ipynb` with implemented models.
-   - `README.md` with documentation.
-
-2. **Short-Answer Responses**:
-   - Submit a PDF with answers to Blackboard.
-
-## Grading Criteria
-| Criteria              | Weight |
-|-----------------------|--------|
-| Code Functionality   | 30%    |
-| Visualizations       | 20%    |
-| Short-Answer Responses | 40%    |
-| Code Quality        | 10%    |
 
 ## Contact
-For questions, contact [Your Email] or open an issue on GitHub.
+For questions, contact DrKaleemCCRP@Gmail.com or open an issue on GitHub.
