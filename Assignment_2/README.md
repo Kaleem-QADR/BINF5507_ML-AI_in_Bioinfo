@@ -10,6 +10,7 @@ Assignment_2/
   │ ├── main.ipynb # Jupyter Notebook for full analysis
 ├── Data/ # Dataset & Model performance plots
   │ ├── heart_disease_uci.csv # UCI Heart Disease dataset (if needed)
+├── Plots #output plot images for reference
   │ ├── Logistic_Regression_AUROC.png
   │ ├── Logistic_Regression_Precision_Recall_Curve.png
   │ ├── k-NN_Classifier_AUROC.png
