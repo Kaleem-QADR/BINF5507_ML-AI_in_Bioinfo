@@ -1,79 +1,72 @@
-# Assignment 2: Regression and Classification Models
+# Heart Disease Prediction using Machine Learning
 
-## Overview
-This project implements machine learning models for **regression and classification** using the **Heart Disease Dataset** from the UCI Machine Learning Repository. The primary objectives are:
-- Training and evaluating regression models to predict cholesterol levels.
-- Training and evaluating classification models to predict the presence of heart disease.
-- Analyzing hyperparameter effects and visualizing performance metrics.
+This project explores **heart disease prediction** using **ElasticNet Regression, Logistic Regression, and k-NN Classification**.
 
-## Repository Structure
+## 📂 Repository Structure
 ```
-YourClassRepositoryName/YourAssignmentFolderName
-├── README.md              # Project documentation
-├── Scripts/
-│   ├── main.ipynb         # Jupyter Notebook for training & evaluation
-│   ├── regression.py      # Python script for regression models
-│   ├── classification.py  # Python script for classification models
-│   ├── utils.py           # Helper functions for data preprocessing & visualization
-├── Data/
-│   ├── heart_disease_uci.csv  # Dataset file
+Assignment_2/
+├── README.md # Project documentation
+├── Scripts/ # Code files
+  │ ├── main.ipynb # Jupyter Notebook for full analysis
+├── Data/ # Dataset & Model performance plots
+  │ ├── heart_disease_uci.csv # UCI Heart Disease dataset (if needed)
+  │ ├── Logistic_Regression_AUROC.png
+  │ ├── Logistic_Regression_Precision_Recall_Curve.png
+  │ ├── k-NN_Classifier_AUROC.png
+  │ ├── k-NN_Classifier_Precision_Recall_Curve.png
 ```
 
-## Dataset
-The dataset used in this assignment is the **Heart Disease Dataset** from the UCI Machine Learning Repository.
 
-- **Features:** Age, sex, chest pain type, resting blood pressure, cholesterol, fasting blood sugar, etc.
-- **Target Variables:**
-  - **Regression Task:** Predict cholesterol levels (`chol` column).
-  - **Classification Task:** Predict heart disease presence (`num` column).
+## 📝 **Project Overview**
+This project involves:
+- **Data Preprocessing** (handling missing values, encoding, scaling)
+- **Regression Model** (ElasticNet for `chol`)
+- **Classification Models** (Logistic Regression & k-NN for `num`)
+- **Model Evaluation** (AUROC, AUPRC, and performance plots)
 
-### Data Source:
-[UCI Machine Learning Repository - Heart Disease](https://archive.ics.uci.edu/dataset/45/heart+disease)
+## 📊 **Results**
+| Model                  | AUROC  | AUPRC  |
+|------------------------|--------|--------|
+| Logistic Regression    | 0.9007 | 0.9190 |
+| k-NN Classifier       | 0.8662 | 0.8813 |
 
-## Setup Instructions
-1. **Clone the repository**:
-   ```sh
-   git clone https://github.com/YourUsername/YourClassRepositoryName.git
-   cd YourClassRepositoryName/YourAssignmentFolderName
-   ```
+## 🚀 **How to Run**
+1. Clone this repository:
+```bash
+git clone https://github.com/Kaleem-QADR/BINF5507_ML-AI_in_Bioinfo.git
+2. Navigate to the project directory:
+```
+cd BINF5507_ML-AI_in_Bioinfo/Assignment_2
 
-2. **Install dependencies**:
-   ```sh
-   pip install -r requirements.txt
-   ```
+```
+3. Install dependencies:
+```
+pip install -r requirements.txt
+```
+4. Run main.ipynb in Jupyter Notebook:
+```
+jupyter notebook main.ipynb
+```
 
-3. **Download Dataset** (if not included):
-   ```python
-   from sklearn.datasets import fetch_openml
-   data = fetch_openml(name="heart-disease", as_frame=True)
-   ```
-
-4. **Run the Jupyter Notebook**:
-   ```sh
-   jupyter notebook Scripts/main.ipynb
-   ```
-
-## Model Implementation
-### 1. Regression Models (Predicting Cholesterol Levels)
-- Implement **ElasticNet Regression**.
-- Tune **alpha** and **l1_ratio** hyperparameters.
-- Evaluate models using:
-  - **R² Score**
-  - **Root Mean Squared Error (RMSE)**
-- Generate a **heatmap** of R² and RMSE scores.
-
-### 2. Classification Models (Predicting Heart Disease)
-- Implement:
-  - **Logistic Regression**
-  - **k-Nearest Neighbors (k-NN)**
-- Hyperparameter tuning:
-  - Logistic Regression: **penalty, solver**
-  - k-NN: **n_neighbors** (e.g., {1, 5, 10})
-- Evaluation Metrics:
-  - **Accuracy, F1 Score, AUROC, AUPRC**
-- Visualizations:
-  - **AUROC and AUPRC curves** for best models.
-
-
-## Contact
-For questions, contact DrKaleemCCRP@Gmail.com or open an issue on GitHub.
+🔹 Data Preprocessing
+```
+# Convert 'num' into a binary classification target
+df["num"] = df["num"].apply(lambda x: 1 if x > 0 else 0)
+```
+🔹 Train Logistic Regression
+```
+log_reg = GridSearchCV(LogisticRegression(), {"penalty": ["l2"], "solver": ["lbfgs"]}, scoring="roc_auc", cv=5)
+log_reg.fit(X_train_clf, y_train_clf)
+y_prob_lr = log_reg.best_estimator_.predict_proba(X_test_clf)[:, 1]
+```
+🔹 Plot AUROC Curve
+```
+def plot_auroc(y_true, y_prob, model_name):
+    fpr, tpr, _ = roc_curve(y_true, y_prob)
+    plt.plot(fpr, tpr, color='blue', label=f"AUC: {roc_auc_score(y_true, y_prob):.2f}")
+    plt.xlabel("False Positive Rate")
+    plt.ylabel("True Positive Rate")
+    plt.title(f"{model_name} - ROC Curve")
+    plt.legend()
+    plt.show()
+```
