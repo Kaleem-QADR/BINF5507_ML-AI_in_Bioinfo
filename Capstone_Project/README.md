@@ -1,10 +1,10 @@
 # Capstone Project: Gaussian Mixture Models (GMM) vs. Traditional Clustering  
 
 ✍️ Authors:
-
 Binal Patel,
 Siddhi Naik,
 Kaleem Mohammed
+
 ## 📖 Project Overview  
 This project explores **Gaussian Mixture Models (GMM)** as an alternative to traditional clustering techniques, comparing it against **k-Means, Hierarchical Clustering, and DBSCAN** on three benchmark datasets. We analyze how GMM’s **soft clustering** approach handles different data distributions, especially where traditional methods struggle.  
 
