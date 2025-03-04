@@ -1,6 +1,7 @@
 # Capstone Project: Gaussian Mixture Models (GMM) vs. Traditional Clustering  
 
-✍️ Authors
+✍️ Authors:
+
 Binal Patel,
 Siddhi Naik,
 Kaleem Mohammed
