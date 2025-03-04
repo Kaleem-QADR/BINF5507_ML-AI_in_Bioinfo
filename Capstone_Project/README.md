@@ -30,7 +30,7 @@ Capstone_Project/
 ## 🖥️ How to Run the Code  
 1. **Clone the repository:**  
    ```bash
-   git clone https://github.com/????????.git
+   git clone https://github.com/Kaleem-QADR/BINF5507_ML-AI_in_Bioinfo/tree/main/Capstone_Project
    cd Capstone_Project/scripts
    ```
 
