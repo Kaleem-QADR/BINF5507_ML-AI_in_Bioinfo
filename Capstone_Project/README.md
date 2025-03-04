@@ -1,5 +1,9 @@
 # Capstone Project: Gaussian Mixture Models (GMM) vs. Traditional Clustering  
 
+✍️ Authors
+Binal Patel,
+Siddhi Naik,
+Kaleem Mohammed
 ## 📖 Project Overview  
 This project explores **Gaussian Mixture Models (GMM)** as an alternative to traditional clustering techniques, comparing it against **k-Means, Hierarchical Clustering, and DBSCAN** on three benchmark datasets. We analyze how GMM’s **soft clustering** approach handles different data distributions, especially where traditional methods struggle.  
 
@@ -46,10 +50,6 @@ Silhouette Score: Measures cluster quality for each method.
 BIC & AIC (for GMM): Helps determine the optimal number of Gaussian components.
 Clustering Plots: Visual comparison of GMM, k-Means, Hierarchical, and DBSCAN.
 
-✍️ Authors
-Binal Patel
-Siddhi Naik
-Kaleem Mohammed
 
 📌 References
 scikit-learn: GaussianMixture
