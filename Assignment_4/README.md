@@ -56,8 +56,3 @@ Kaleem Uddin Mohammed
 Contact: Dr.KaleemCCRP@Gmail.com
 ## License
 This project is for educational purposes only.
-
-
-
-You can **copy-paste** this directly into your `README.md` file in **Markdown format**.  
-✅ **Let me know if you'd like any edits, or we can start coding!** 🚀
